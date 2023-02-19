@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
-import MessengerCustomerChat from 'react-messenger-customer-chat'
+import { MessengerChat } from 'react-messenger-chat-plugin'
 import { chakra, Container, Flex, Icon, Image, Spinner, Text, useDisclosure } from '@chakra-ui/react'
 import { FiAlertTriangle } from 'react-icons/fi'
 import Header from './header'
@@ -89,7 +89,35 @@ const AppLayout = (props) => {
 					</chakra.main>
 				</chakra.div>
 
-				<MessengerCustomerChat pageId="100090256728980" appId="6058773064182835" />
+				<MessengerChat
+					pageId="100090256728980"
+					language="sv_SE"
+					themeColor={'#000000'}
+					bottomSpacing={300}
+					loggedInGreeting="loggedInGreeting"
+					loggedOutGreeting="loggedOutGreeting"
+					greetingDialogDisplay={'show'}
+					debugMode={true}
+					onMessengerShow={() => {
+						console.log('onMessengerShow')
+					}}
+					onMessengerHide={() => {
+						console.log('onMessengerHide')
+					}}
+					onMessengerDialogShow={() => {
+						console.log('onMessengerDialogShow')
+					}}
+					onMessengerDialogHide={() => {
+						console.log('onMessengerDialogHide')
+					}}
+					onMessengerMounted={() => {
+						console.log('onMessengerMounted')
+					}}
+					onMessengerLoad={() => {
+						console.log('onMessengerLoad')
+					}}
+				/>
+
 				{router.pathname === '/' && <Footer />}
 			</>
 		)
