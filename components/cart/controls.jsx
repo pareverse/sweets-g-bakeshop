@@ -4,7 +4,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import api from 'instance'
-import { Button, chakra, Flex, FormControl, FormErrorMessage, FormLabel, Icon, Input, InputGroup, InputLeftElement, InputRightElement, Select, Text, useToast } from '@chakra-ui/react'
+import { Button, chakra, Divider, Flex, FormControl, FormErrorMessage, FormHelperText, FormLabel, Icon, Input, InputGroup, InputLeftElement, InputRightElement, Select, Text, useToast } from '@chakra-ui/react'
 import Card from 'components/_card'
 import Toast from 'components/_toast'
 import { FiUser, FiX } from 'react-icons/fi'
@@ -146,7 +146,7 @@ const Controls = ({ user, carts, subtotal, discount, total }) => {
 	}
 
 	useEffect(() => {
-		setValue('method', 'Cash on Delivery')
+		setValue('method', 'GCash')
 	}, [])
 
 	return (
@@ -159,59 +159,57 @@ const Controls = ({ user, carts, subtotal, discount, total }) => {
 
 					<FormControl isInvalid={errors.method}>
 						<Select size="lg" {...register('method', { required: true })}>
-							<chakra.option value="Cash on Delivery">Cash On Delivery</chakra.option>
 							<chakra.option value="GCash">GCash</chakra.option>
 						</Select>
 
 						<FormErrorMessage>This field is required.</FormErrorMessage>
+						<FormHelperText>Note: 60% Downpayment (non-refundable)</FormHelperText>
 					</FormControl>
 
-					{watch('method') === 'GCash' && (
-						<>
-							<FormControl>
-								<FormLabel>Account Name</FormLabel>
+					<FormControl>
+						<FormLabel>Account Name</FormLabel>
 
-								<InputGroup>
-									<InputLeftElement pt={1} pl={1}>
-										<FiUser size={16} />
-									</InputLeftElement>
+						<InputGroup>
+							<InputLeftElement pt={1} pl={1}>
+								<FiUser size={16} />
+							</InputLeftElement>
 
-									<Input value="Sweet G Bakeshop" size="lg" readOnly />
-								</InputGroup>
-							</FormControl>
-							<FormControl>
-								<FormLabel>Account Number</FormLabel>
+							<Input value="Sweet G Bakeshop" size="lg" readOnly />
+						</InputGroup>
+					</FormControl>
+					<FormControl>
+						<FormLabel>Account Number</FormLabel>
 
-								<InputGroup>
-									<InputLeftElement pt={1} pl={1}>
-										#
-									</InputLeftElement>
+						<InputGroup>
+							<InputLeftElement pt={1} pl={1}>
+								#
+							</InputLeftElement>
 
-									<Input value="09123456789" size="lg" readOnly />
-								</InputGroup>
-							</FormControl>
+							<Input value="09123456789" size="lg" readOnly />
+						</InputGroup>
+					</FormControl>
 
-							{image ? (
-								<FormControl>
-									<FormLabel>Proof of Payment</FormLabel>
+					{image ? (
+						<FormControl>
+							<FormLabel>Proof of Payment</FormLabel>
 
-									<InputGroup>
-										<Input value={image.name} size="lg" cursor="default" readOnly />
+							<InputGroup>
+								<Input value={image.name} size="lg" cursor="default" readOnly />
 
-										<InputRightElement pt={1} pr={1}>
-											<Icon as={FiX} boxSize={4} color="accent-1" cursor="pointer" onClick={() => setImage(null)} />
-										</InputRightElement>
-									</InputGroup>
-								</FormControl>
-							) : (
-								<Button variant="tinted" size="lg" onClick={() => document.getElementById('file').click()}>
-									Proof of Payment
-								</Button>
-							)}
-						</>
+								<InputRightElement pt={1} pr={1}>
+									<Icon as={FiX} boxSize={4} color="accent-1" cursor="pointer" onClick={() => setImage(null)} />
+								</InputRightElement>
+							</InputGroup>
+						</FormControl>
+					) : (
+						<Button variant="tinted" size="lg" onClick={() => document.getElementById('file').click()}>
+							Proof of Payment
+						</Button>
 					)}
 
 					<chakra.input type="file" id="file" display="none" pointerEvents="none" onChange={handleImage} />
+
+					<Divider />
 
 					<Button type="submit" size="lg" colorScheme="brand" isLoading={isLoading}>
 						Place Order

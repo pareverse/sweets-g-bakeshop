@@ -131,7 +131,7 @@ const Sidebar = ({ session, isAdmin, isCustomer, isUserPage, isSidebarOpen, onSi
 									</Link>
 								</NextLink>
 
-								<NextLink href="/shop" passHref>
+								<NextLink href="/cakes" passHref>
 									<Link as="span" display="block" py={2} lineHeight={6} color={router.pathname.includes('shop') ? 'brand.default' : 'white'} onClick={onSidebarClose}>
 										Shop
 									</Link>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
+import MessengerCustomerChat from 'react-messenger-customer-chat'
 import { chakra, Container, Flex, Icon, Image, Spinner, Text, useDisclosure } from '@chakra-ui/react'
 import { FiAlertTriangle } from 'react-icons/fi'
 import Header from './header'
@@ -88,6 +89,7 @@ const AppLayout = (props) => {
 					</chakra.main>
 				</chakra.div>
 
+				<MessengerCustomerChat pageId="100090256728980" appId="6058773064182835" />
 				{router.pathname === '/' && <Footer />}
 			</>
 		)

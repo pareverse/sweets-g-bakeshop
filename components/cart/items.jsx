@@ -66,7 +66,6 @@ const Items = ({ carts }) => {
 						<Thead>
 							<Tr>
 								<Th>Product</Th>
-								<Th>Quantity</Th>
 								<Th>Price</Th>
 								<Th>Discount</Th>
 								<Th>Total</Th>
@@ -86,14 +85,6 @@ const Items = ({ carts }) => {
 													{cart.product.name}
 												</Text>
 											</NextLink>
-										</Flex>
-									</Td>
-
-									<Td>
-										<Flex align="center" gap={3}>
-											<IconButton variant="ghost" size="xs" icon={<FiMinus size={12} />} disabled={cart.quantity === 1} onClick={() => minusQuantity(cart)} />
-											<Text>{cart.quantity}</Text>
-											<IconButton variant="ghost" size="xs" icon={<FiPlus size={12} />} onClick={() => addQuantity(cart)} />
 										</Flex>
 									</Td>
 

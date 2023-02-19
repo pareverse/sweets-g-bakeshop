@@ -4,7 +4,6 @@ import api from 'instance'
 import { Container, Flex, Grid, GridItem, Spinner, Text } from '@chakra-ui/react'
 import Items from 'components/cart/items'
 import Details from 'components/cart/details'
-import Address from 'components/cart/address'
 import Controls from 'components/cart/controls'
 import Router from 'next/router'
 
@@ -66,7 +65,6 @@ const Cart = () => {
 
 					<GridItem display="grid" gap={6}>
 						<Details user={user} carts={carts} subtotal={subtotal} discount={discount} total={total} />
-						{/* <Address user={user} /> */}
 						<Controls user={user} carts={carts} subtotal={subtotal} discount={discount} total={total} />
 					</GridItem>
 				</Grid>

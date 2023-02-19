@@ -14,7 +14,6 @@ const Items = ({ order }) => {
 						<Thead>
 							<Tr>
 								<Th>Product</Th>
-								<Th>Quantity</Th>
 								<Th>Price</Th>
 								<Th>Discount</Th>
 								<Th>Total</Th>
@@ -29,10 +28,6 @@ const Items = ({ order }) => {
 											<Image borderRadius={8} boxSize={8} alt={item.product.name} src={item.product.image} />
 											<Text>{item.product.name}</Text>
 										</Flex>
-									</Td>
-
-									<Td>
-										<Text>x{item.quantity}</Text>
 									</Td>
 
 									<Td>

@@ -3,8 +3,8 @@ import { useRouter } from 'next/router'
 import { useSession, signIn } from 'next-auth/react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import api from 'instance'
-import { Badge, Button, Container, Divider, Flex, IconButton, Image, Input, InputGroup, InputLeftElement, InputRightElement, Spinner, Text, useToast } from '@chakra-ui/react'
-import { FiHeart, FiMinus, FiPlus, FiShoppingCart } from 'react-icons/fi'
+import { Button, Container, Divider, Flex, Image, Spinner, Text, useToast } from '@chakra-ui/react'
+import { FiShoppingCart } from 'react-icons/fi'
 import Toast from 'components/_toast'
 
 const Shop = () => {
@@ -93,19 +93,7 @@ const Shop = () => {
 						<Divider />
 
 						<Flex direction="column" gap={6}>
-							<InputGroup>
-								<InputLeftElement as="button" pt={1} pl={1} color="accent-1" cursor={quantity === 1 ? 'not-allowed' : 'pointer'} disabled={quantity === 1} onClick={() => setQuantity((prev) => prev - 1)}>
-									<FiMinus size={16} />
-								</InputLeftElement>
-
-								<Input value={product.stocks ? quantity : 'Out Of Stocks'} borderRadius="full" size="lg" textAlign="center" readOnly />
-
-								<InputRightElement as="button" pt={1} pr={1} color="accent-1" cursor={quantity === 10 ? 'not-allowed' : 'pointer'} disabled={quantity === 10} onClick={() => setQuantity((prev) => prev + 1)}>
-									<FiPlus size={16} />
-								</InputRightElement>
-							</InputGroup>
-
-							<Button borderRadius="full" size="lg" w="full" colorScheme="brand" leftIcon={<FiShoppingCart size={16} />} isLoading={isLoading} disabled={product.stocks ? false : true} onClick={onSubmit}>
+							<Button borderRadius="full" size="lg" w="full" colorScheme="brand" leftIcon={<FiShoppingCart size={16} />} isLoading={isLoading} onClick={onSubmit}>
 								Add To Cart
 							</Button>
 						</Flex>
