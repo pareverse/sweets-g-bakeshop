@@ -89,7 +89,8 @@ const AppLayout = (props) => {
 					</chakra.main>
 				</chakra.div>
 
-				{typeof window !== 'undefiend' && <MessengerCustomerChat pageId="100090256728980" appId="6058773064182835" htmlRef="<REF_STRING>" />}
+				<MessengerCustomerChat pageId="100090256728980" appId="1349147062325625" themeColor="#0084ff" loggedInGreeting="Hi there! How can we help you today?" loggedOutGreeting="Please log in to chat with us." />
+
 				{router.pathname === '/' && <Footer />}
 			</>
 		)
