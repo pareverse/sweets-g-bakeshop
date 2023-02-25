@@ -11,7 +11,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }) => {
 	return (
 		<>
 			<Head>
-				<title>Sweets G Bakeshop</title>
+				<title>Sweets G Bakeshop - Test</title>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta name="description" content="" />
 				<link rel="icon" type="image/png" size="96x96" href="favicon.svg" />
