@@ -90,7 +90,7 @@ const AppLayout = (props) => {
 
 				<MessengerChat
 					pageId="100090256728980"
-					language="sv_SE"
+					language="en_US"
 					themeColor={'#000000'}
 					bottomSpacing={300}
 					loggedInGreeting="loggedInGreeting"
