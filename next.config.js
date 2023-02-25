@@ -1,7 +1,7 @@
 module.exports = {
 	reactStrictMode: true,
 	swcMinify: true,
-	async headers() {
+	async rewrites() {
 		return [
 			{
 				source: '/:path*',
