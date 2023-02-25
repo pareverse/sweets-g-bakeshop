@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
-import { MessengerChat } from 'react-messenger-chat-plugin'
 import { chakra, Container, Flex, Icon, Image, Spinner, Text, useDisclosure } from '@chakra-ui/react'
 import { FiAlertTriangle } from 'react-icons/fi'
 import Header from './header'
 import Sidebar from './sidebar'
 import Hero from 'components/hero'
+import FacebookChat from 'components/facebook-chat'
 import Footer from './footer'
 
 const AppLayout = (props) => {
@@ -80,6 +80,7 @@ const AppLayout = (props) => {
 			<>
 				<Header session={session} isAdmin={isAdmin} isCustomer={isCustomer} onSidebarOpen={onSidebarOpen} />
 				{!isAdmin && router.pathname === '/' && <Hero />}
+
 				<chakra.div mx="auto" h="auto" minH="calc(100vh - 72px)" w="full" maxW={isAdmin ? 1536 : 1280}>
 					<Sidebar session={session} isAdmin={isAdmin} isCustomer={isCustomer} isUserPage={isUserPage} isSidebarOpen={isSidebarOpen} onSidebarClose={onSidebarClose} />
 
@@ -88,34 +89,7 @@ const AppLayout = (props) => {
 					</chakra.main>
 				</chakra.div>
 
-				<MessengerChat
-					pageId="100090256728980"
-					language="en_US"
-					themeColor={'#000000'}
-					bottomSpacing={300}
-					loggedInGreeting="loggedInGreeting"
-					loggedOutGreeting="loggedOutGreeting"
-					greetingDialogDisplay={'show'}
-					debugMode={true}
-					onMessengerShow={() => {
-						console.log('onMessengerShow')
-					}}
-					onMessengerHide={() => {
-						console.log('onMessengerHide')
-					}}
-					onMessengerDialogShow={() => {
-						console.log('onMessengerDialogShow')
-					}}
-					onMessengerDialogHide={() => {
-						console.log('onMessengerDialogHide')
-					}}
-					onMessengerMounted={() => {
-						console.log('onMessengerMounted')
-					}}
-					onMessengerLoad={() => {
-						console.log('onMessengerLoad')
-					}}
-				/>
+				<FacebookChat />
 
 				{router.pathname === '/' && <Footer />}
 			</>
