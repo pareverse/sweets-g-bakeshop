@@ -6,7 +6,6 @@ import { FiAlertTriangle } from 'react-icons/fi'
 import Header from './header'
 import Sidebar from './sidebar'
 import Hero from 'components/hero'
-import FacebookChat from 'components/facebook-chat'
 import Footer from './footer'
 
 const AppLayout = (props) => {
@@ -88,8 +87,6 @@ const AppLayout = (props) => {
 						{props.children}
 					</chakra.main>
 				</chakra.div>
-
-				<FacebookChat />
 
 				{router.pathname === '/' && <Footer />}
 			</>
