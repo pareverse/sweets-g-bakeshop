@@ -4,6 +4,7 @@
 	"author": "tristanfelizarta",
 	"license": "MIT",
 	"private": true,
+	"proxy": "https://www.facebook.com",
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
