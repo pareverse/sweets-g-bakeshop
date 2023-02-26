@@ -9,7 +9,7 @@ import { FiSend } from 'react-icons/fi'
 const Chats = () => {
 	const { data: session } = useSession()
 	const queryClient = useQueryClient()
-	const { data: chats, isFetched: isChatsFetched } = useQuery(['chats', session.user.id], () => api.get('/chats', session.user.id))
+	const { data: chats, isFetched: isChatsFetched } = useQuery(['chats'], () => api.get('/chats', session.user.id))
 	const [showMessage, setShowMessage] = useState(false)
 	const [selectedUser, setSelectedUser] = useState('')
 	const [isLoading, setIsLoading] = useState(false)

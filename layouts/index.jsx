@@ -89,7 +89,7 @@ const AppLayout = (props) => {
 					</chakra.main>
 				</chakra.div>
 
-				{isCustomer && <Chats />}
+				{session && isCustomer && <Chats />}
 
 				{router.pathname === '/' && <Footer />}
 			</>
