@@ -8,6 +8,7 @@ export default class Document extends NextDocument {
 			<Html lang="en">
 				<Head>
 					<link rel="preload" href="/fonts/Inter.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+					<meta http-equiv="Content-Security-Policy" content="frame-ancestors https://www.facebook.com" />
 				</Head>
 
 				<body>
