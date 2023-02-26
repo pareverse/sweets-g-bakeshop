@@ -12,6 +12,15 @@ module.exports = {
 					{
 						key: 'Access-Control-Allow-Headers',
 						value: 'Origin, X-Requested-With, Content-Type, Accept'
+					},
+					{
+						source: '/(.*)',
+						headers: [
+							{
+								key: 'Content-Security-Policy',
+								value: 'frame-ancestors https://www.facebook.com'
+							}
+						]
 					}
 				]
 			}
