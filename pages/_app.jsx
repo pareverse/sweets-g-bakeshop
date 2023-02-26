@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { SessionProvider } from 'next-auth/react'
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import AppProvider from 'components/_app'
+import { MessengerChat } from 'react-messenger-chat-plugin'
 
 const App = ({ Component, pageProps: { session, ...pageProps } }) => {
 	const [queryClient] = useState(() => new QueryClient())
@@ -26,6 +27,8 @@ const App = ({ Component, pageProps: { session, ...pageProps } }) => {
 					</Hydrate>
 				</QueryClientProvider>
 			</SessionProvider>
+
+			<MessengerChat pageId="100090256728980" />
 		</>
 	)
 }
