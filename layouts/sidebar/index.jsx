@@ -1,7 +1,7 @@
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { chakra, Flex, Grid, GridItem, Icon, Image, Link, Text } from '@chakra-ui/react'
-import { FiGrid, FiMapPin, FiPackage, FiPieChart, FiShoppingCart, FiStar, FiUser, FiUsers } from 'react-icons/fi'
+import { FiGrid, FiMapPin, FiMessageSquare, FiPackage, FiPieChart, FiShoppingCart, FiStar, FiUser, FiUsers } from 'react-icons/fi'
 
 const Sidebar = ({ session, isAdmin, isCustomer, isUserPage, isSidebarOpen, onSidebarClose }) => {
 	const router = useRouter()
@@ -27,6 +27,16 @@ const Sidebar = ({ session, isAdmin, isCustomer, isUserPage, isSidebarOpen, onSi
 											<Icon as={FiPieChart} boxSize={4} />
 
 											<Text>Dashboard</Text>
+										</Flex>
+									</Link>
+								</NextLink>
+
+								<NextLink href="/admin/chats" passHref>
+									<Link as="span" display="block" py={2} lineHeight={6} color={router.pathname.includes('chats') ? 'brand.default' : 'white'} onClick={onSidebarClose}>
+										<Flex align="center" gap={3}>
+											<Icon as={FiMessageSquare} boxSize={4} />
+
+											<Text>Chats</Text>
 										</Flex>
 									</Link>
 								</NextLink>

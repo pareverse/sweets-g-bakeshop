@@ -7,6 +7,7 @@ import Header from './header'
 import Sidebar from './sidebar'
 import Hero from 'components/hero'
 import Footer from './footer'
+import Chats from 'components/chats'
 
 const AppLayout = (props) => {
 	const router = useRouter()
@@ -87,6 +88,8 @@ const AppLayout = (props) => {
 						{props.children}
 					</chakra.main>
 				</chakra.div>
+
+				{isCustomer && <Chats />}
 
 				{router.pathname === '/' && <Footer />}
 			</>
