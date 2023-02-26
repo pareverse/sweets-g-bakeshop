@@ -18,6 +18,8 @@ const App = ({ Component, pageProps: { session, ...pageProps } }) => {
 				<link rel="icon" type="image/png" size="96x96" href="favicon.svg" />
 			</Head>
 
+			<MessengerChat pageId="100090256728980" />
+
 			<SessionProvider session={session}>
 				<QueryClientProvider client={queryClient}>
 					<Hydrate state={pageProps.dehydratedState}>
@@ -27,8 +29,6 @@ const App = ({ Component, pageProps: { session, ...pageProps } }) => {
 					</Hydrate>
 				</QueryClientProvider>
 			</SessionProvider>
-
-			<MessengerChat pageId="100090256728980" />
 		</>
 	)
 }
