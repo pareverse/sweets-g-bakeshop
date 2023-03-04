@@ -39,7 +39,7 @@ const Status = ({ order }) => {
 								</Flex>
 
 								<Text fontSize="sm" fontWeight="semibold" color="accent-1">
-									To Pick Up
+									Processing
 								</Text>
 							</Flex>
 
