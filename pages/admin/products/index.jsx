@@ -24,7 +24,7 @@ const Products = () => {
 					<Table
 						data={products}
 						fetched={isProductsFetched}
-						th={['Product', 'Stocks', 'Price', 'Sold', 'Status', 'Created', '']}
+						th={['Product', 'Price', 'Sold', 'Status', 'Created', '']}
 						td={(product) => (
 							<Tr key={product._id}>
 								<Td maxW={200}>
@@ -35,10 +35,6 @@ const Products = () => {
 											{product.name}
 										</Text>
 									</Flex>
-								</Td>
-
-								<Td>
-									<Text>{product.stocks}</Text>
 								</Td>
 
 								<Td>
