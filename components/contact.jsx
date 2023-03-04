@@ -37,7 +37,7 @@ const Contact = () => {
 
 	return (
 		<chakra.section pt={100} id="contact">
-			<AspectRatio ratio={1}>
+			<AspectRatio ratio={16 / 9}>
 				<chakra.iframe borderRadius={12} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234.54256935549026!2d120.97407849516358!3d14.464581377909093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397cd14278b9d91%3A0x6a0edafb18a3edc!2sSweets%20G!5e1!3m2!1sen!2sph!4v1674841180822!5m2!1sen!2sph" />
 			</AspectRatio>
 
