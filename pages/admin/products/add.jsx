@@ -84,7 +84,6 @@ const Add = () => {
 			image: res.data.secure_url,
 			name: data.name,
 			description: data.description,
-			stocks: Number(data.stocks),
 			price: Number(data.price),
 			discount: {
 				percentage: Number(data.percentage)
@@ -145,16 +144,6 @@ const Add = () => {
 										<FormLabel>Identification</FormLabel>
 										<Input size="lg" cursor="not-allowed" readOnly />
 										<FormHelperText>Product identification will automatically be generated once the product has been published.</FormHelperText>
-										<FormErrorMessage>This field is required.</FormErrorMessage>
-									</FormControl>
-
-									<FormControl isInvalid={errors.stocks}>
-										<FormLabel>
-											In Stock <chakra.span color="red.default">*</chakra.span>
-										</FormLabel>
-
-										<Input type="number" placeholder={0} size="lg" {...register('stocks', { required: true })} />
-
 										<FormErrorMessage>This field is required.</FormErrorMessage>
 									</FormControl>
 								</Flex>

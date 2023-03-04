@@ -106,7 +106,6 @@ const View = () => {
 				image: res.data.secure_url,
 				name: data.name,
 				description: data.description,
-				stocks: Number(data.stocks),
 				price: Number(data.price),
 				discount: {
 					percentage: Number(data.percentage)
@@ -120,7 +119,6 @@ const View = () => {
 		editMutation.mutate({
 			name: data.name,
 			description: data.description,
-			stocks: Number(data.stocks),
 			price: Number(data.price),
 			discount: {
 				percentage: Number(data.percentage)
@@ -185,7 +183,7 @@ const View = () => {
 										<FormErrorMessage>This field is required.</FormErrorMessage>
 									</FormControl>
 
-									<Text fontSize="xl" fontWeight="semibold" color="accent-1">
+									{/* <Text fontSize="xl" fontWeight="semibold" color="accent-1">
 										Inventory
 									</Text>
 
@@ -197,7 +195,7 @@ const View = () => {
 										<Input type="number" defaultValue={product.stocks} placeholder={0} size="lg" {...register('stocks', { required: true })} />
 
 										<FormErrorMessage>This field is required.</FormErrorMessage>
-									</FormControl>
+									</FormControl> */}
 
 									<Text fontSize="xl" fontWeight="semibold" color="accent-1">
 										Pricing
