@@ -375,12 +375,6 @@ const Details = ({ session, order }) => {
 		onSuccess: () => {
 			queryClient.invalidateQueries('orders')
 			setIsLoading(false)
-
-			toast({
-				position: 'top',
-				duration: 1000,
-				render: () => <Toast title="Success" description="Order cancelled successfully." />
-			})
 		}
 	})
 
@@ -394,6 +388,12 @@ const Details = ({ session, order }) => {
 				date: new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' })
 			}
 		})
+		
+		toast({
+				position: 'top',
+				duration: 1000,
+				render: () => <Toast title="Success" description="Order cancelled successfully." />
+			})
 	}
 
 	const onAccept = () => {
@@ -406,6 +406,12 @@ const Details = ({ session, order }) => {
 				date: new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' })
 			}
 		})
+		
+		toast({
+				position: 'top',
+				duration: 1000,
+				render: () => <Toast title="Success" description="Order accepted successfully." />
+			})
 	}
 
 	const onReceive = () => {
@@ -418,6 +424,12 @@ const Details = ({ session, order }) => {
 				date: new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' })
 			}
 		})
+		
+		toast({
+				position: 'top',
+				duration: 1000,
+				render: () => <Toast title="Success" description="Order received successfully." />
+			})
 	}
 
 	return (
